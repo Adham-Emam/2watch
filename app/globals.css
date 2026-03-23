@@ -204,6 +204,29 @@
 }
 
 @layer utilities {
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--foreground);
+    span {
+      background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-accent)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      -webkit-font-smoothing: antialiased;
+    }
+    + p {
+      max-width: 600px;
+      margin-bottom: 5rem;
+      color: var(--muted-foreground);
+      opacity: 0.7;
+    }
+  }
   /* Glassmorphism Classes */
   .glass-card {
     @apply backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;

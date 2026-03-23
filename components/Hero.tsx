@@ -8,22 +8,12 @@ import { ArrowRight } from 'lucide-react'
 
 import ShadowOverlay from '@/components/ui/shadowOverlay'
 import { Button } from '@/components/ui/button'
+import { posters, PosterProps } from '@/constants/posters'
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const moviesPosters = [
-    'http://www.impawards.com/2014/posters/interstellar_ver2.jpg',
-    'http://www.impawards.com/2026/posters/peaky_blinders_the_immortal_man_ver3.jpg',
-    'http://www.impawards.com/tv/posters/game_of_thrones.jpg',
-    'http://www.impawards.com/2026/posters/drama_ver5.jpg',
-    'http://www.impawards.com/intl/japan/2025/posters/demon_slayer__kimetsu_no_yaiba__infinity_castle_ver9.jpg',
-    'http://www.impawards.com/2016/posters/me_before_you.jpg',
-    'http://www.impawards.com/tv/posters/breaking_bad_ver5.jpg',
-    'http://www.impawards.com/2026/posters/goat_ver2.jpg',
-    'http://www.impawards.com/2009/posters/five_hundred_days_of_summer_ver3.jpg',
-    'http://www.impawards.com/2025/posters/five_nights_at_freddys_two_ver2.jpg',
-  ]
+  const moviesPosters: PosterProps[] = posters
 
   // Optimized cross-fade animation every 4 seconds
   useEffect(() => {
@@ -54,16 +44,16 @@ const Hero = () => {
 
       {/* Cinematic Fading Background Posters */}
       <div className="absolute inset-0 z-0">
-        {moviesPosters.map((src, index) => (
+        {moviesPosters.map((poster, index) => (
           <div
-            key={src}
+            key={index}
             className={`absolute inset-0 flex items-start justify-center transition-opacity duration-1000 ease-in-out ${
               index === currentIndex ? 'opacity-60' : 'opacity-0'
             }`}
           >
             <Image
-              src={src}
-              alt="Movie Poster background"
+              src={poster.src}
+              alt={poster.title}
               fill
               priority={index === 0}
               className="object-cover object-top filter contrast-125 dark:contrast-100"
