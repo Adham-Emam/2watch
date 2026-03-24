@@ -252,7 +252,12 @@
   }
 
   .animate-float {
-    animation: float-warm 6s ease-in-out infinite;
+    animation: float-warm 3s ease-in-out infinite alternate;
+  }
+
+  .animate-float-reverse {
+    animation: float-warm 3s ease-in-out infinite alternate-reverse;
+    animation-delay: -1.5s;
   }
 
   .shimmer-effect {

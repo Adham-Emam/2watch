@@ -97,9 +97,9 @@ export default function Features() {
                 priority
               />
 
-              <div className="absolute top-0 left-1/2 -translate-1/2 bg-black w-[150%] h-[30%] z-5 blur-3xl" />
-              <div className="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 bg-black w-[150%] h-[50%] z-10 blur-3xl" />
-              <div className="absolute bottom-4 left-4 flex flex-col gap-3 z-10">
+              <div className="absolute top-0 left-1/2 -translate-1/2 bg-black dark:opacity-100 opacity-60 w-[150%] h-[30%] z-5 blur-3xl" />
+              <div className="absolute bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2 bg-black dark:opacity-100 opacity-60 w-[150%] h-[50%] z-10 blur-3xl" />
+              <div className="absolute bottom-4 left-4 flex flex-col gap-3 z-10 text-white">
                 <h3 className="text-2xl font-bold">
                   {posters[currentPoster].title}
                 </h3>
