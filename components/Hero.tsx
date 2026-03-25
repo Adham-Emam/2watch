@@ -149,14 +149,18 @@ const Hero = () => {
         <ShadowOverlay className="top-0 left-0 -translate-1/2" zIndex="-z-10" />
 
         <div className="bg-white/10! glass-card rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 justify-between items-center px-5 py-20">
-          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex justify-center items-center animate-float">
-            this is a poster
+          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float">
+            <div className="btn-gradient w-18 aspect-square rounded-full" />
+            <span className="font-bold">Her</span>
+            <span className="opacity-60">Swiping...</span>
           </div>
           <div className="glass-card rounded-full flex items-center justify-center btn-gradient py-6 px-12 md:text-2xl">
             It's a Match! ❤️
           </div>
-          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex justify-center items-center animate-float-reverse">
-            this is a poster
+          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float-reverse">
+            <div className="btn-gradient-secondary w-18 aspect-square rounded-full" />
+            <span className="font-bold">Him</span>
+            <span className="opacity-60">Swiping...</span>
           </div>
         </div>
       </section>
