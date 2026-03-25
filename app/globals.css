@@ -49,6 +49,21 @@
 
   --border: rgba(233, 69, 96, 0.1);
   --ring: #e94560;
+
+  /* original: rose → orange */
+  --gradient-rose-orange: linear-gradient(to right, #e94560, #ff7a18);
+
+  /* sky → purple */
+  --gradient-sky-purple: linear-gradient(to right, #38bdf8, #8b5cf6);
+
+  /* pink → light purple */
+  --gradient-pink-lavender: linear-gradient(to right, #ec4899, #c4b5fd);
+
+  /* light orange → pink */
+  --gradient-orange-pink: linear-gradient(to right, #fdba74, #f472b6);
+
+  /* blue → cyan (clean alternative) */
+  --gradient-blue-cyan: linear-gradient(to right, #3b82f6, #22d3ee);
 }
 
 .dark {
@@ -246,12 +261,24 @@
     @apply bg-gradient-to-r from-brand-rose to-brand-orange hover:shadow-[0_0_20px_rgba(233,69,96,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 text-white font-bold rounded-full;
   }
 
-  .btn-gradient-secondary {
-    @apply bg-gradient-to-r from-sky-400 to-purple-500
-         hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]
-         transition-all duration-300
-         transform hover:scale-105 active:scale-95
-         text-white font-bold rounded-full;
+  .btn-gradient-rose {
+    background: var(--gradient-rose-orange);
+  }
+
+  .btn-gradient-sky {
+    background: var(--gradient-sky-purple);
+  }
+
+  .btn-gradient-pink {
+    background: var(--gradient-pink-lavender);
+  }
+
+  .btn-gradient-sunset {
+    background: var(--gradient-orange-pink);
+  }
+
+  .btn-gradient-cool {
+    background: var(--gradient-blue-cyan);
   }
 
   /* Interaction Helpers */
