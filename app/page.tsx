@@ -2,6 +2,7 @@ import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import WhyUs from '@/components/WhyUs'
 import HowItWorks from '@/components/HowItWorks'
+import TopPicks from '@/components/TopPicks'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Features />
       <WhyUs />
       <HowItWorks />
+      <TopPicks />
     </main>
   )
 }
