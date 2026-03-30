@@ -33,12 +33,13 @@ export default function TopPicks() {
           {posters.map((poster, index) => (
             <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card className="glass-card overflow-hidden group">
-                  <CardContent className="flex aspect-3/4 items-center justify-center p-6">
+                <Card className="glass-card p-0 overflow-hidden group">
+                  <CardContent className="relative flex aspect-3/4 items-center justify-center p-6">
                     <Image
                       src={poster.src}
                       alt={poster.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       className="object-cover rounded-xl group-hover:scale-105 group-hover:blur-md"
                     />
 

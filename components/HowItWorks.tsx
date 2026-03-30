@@ -1,3 +1,4 @@
+import ShadowOverlay from './ui/shadowOverlay'
 import { UserPlus, Tv, Sparkles, ChevronDown } from 'lucide-react'
 
 const cards = [
@@ -35,6 +36,12 @@ export default function HowItWorks() {
             className="glass-card relative px-4 py-16 rounded-xl"
           >
             <div className="text-2xl font-bold absolute top-0 left-1/2 -translate-1/2 btn-gradient-rose text-white w-12 aspect-square rounded-full flex items-center justify-center">
+              <ShadowOverlay
+                center
+                size="w-50 h-50"
+                opacity="opacity-60"
+                zIndex="-z-10"
+              />
               {index + 1}
             </div>
             <div className="bg-accent/20 text-primary border w-fit mx-auto p-4 rounded-xl">

@@ -92,7 +92,7 @@ export default function Features() {
                 src={posters[currentPoster].src}
                 alt={posters[currentPoster].title}
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 className="object-cover z-0"
                 priority
               />
