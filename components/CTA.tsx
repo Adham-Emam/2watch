@@ -1,10 +1,18 @@
+'use client'
+
+import { AnimatePresence, motion } from 'motion/react'
 import ShadowOverlay from './ui/shadowOverlay'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 import { Heart } from 'lucide-react'
 
 export default function CTA() {
   return (
-    <section className="container relative my-30">
+    <motion.section
+      initial={{ y: 50, scale: 0.8, opacity: 0, filter: 'blur(10px)' }}
+      whileInView={{ y: 0, scale: 1, opacity: 1, filter: 'blur(0px)' }}
+      transition={{ delay: 0.2, duration: 0.3 }}
+      className="container relative my-30"
+    >
       <div className="max-w-230! mx-auto px-4 md:px-16! py-20 glass-card ring ring-primary/20 rounded-2xl">
         <div className="absolute inset-0">
           {Array.from({ length: 5 }).map((_, index) => (
@@ -82,6 +90,6 @@ export default function CTA() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

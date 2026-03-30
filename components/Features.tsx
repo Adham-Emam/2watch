@@ -51,31 +51,37 @@ export default function Features() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-        <Card className="glass-card text-center h-fit">
-          <CardHeader>
-            <div className="bg-accent w-fit p-4 rounded-full mx-auto text-3xl">
-              👩
-            </div>
-            <CardTitle>Her</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <span className="opacity-70">Sarah</span>
-          </CardContent>
-          <CardFooter className="flex items-center justify-center gap-4">
-            <span
-              onClick={() => handleNext(-1)}
-              className="bg-red-500/30 hover:bg-red-500/40 ring ring-red-500/60 p-4 rounded-full cursor-pointer"
-            >
-              <X />
-            </span>
-            <span
-              onClick={() => handleNext(1)}
-              className="bg-green-500/20 hover:bg-green-500/40 ring ring-green-500/60 p-4 rounded-full cursor-pointer"
-            >
-              <Heart />
-            </span>
-          </CardFooter>
-        </Card>
+        <motion.div
+          initial={{ y: -50, opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+          whileInView={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+        >
+          <Card className="glass-card text-center h-fit">
+            <CardHeader>
+              <div className="bg-accent w-fit p-4 rounded-full mx-auto text-3xl">
+                👩
+              </div>
+              <CardTitle>Her</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <span className="opacity-70">Sarah</span>
+            </CardContent>
+            <CardFooter className="flex items-center justify-center gap-4">
+              <span
+                onClick={() => handleNext(-1)}
+                className="bg-red-500/30 hover:bg-red-500/40 ring ring-red-500/60 p-4 rounded-full cursor-pointer"
+              >
+                <X />
+              </span>
+              <span
+                onClick={() => handleNext(1)}
+                className="bg-green-500/20 hover:bg-green-500/40 ring ring-green-500/60 p-4 rounded-full cursor-pointer"
+              >
+                <Heart />
+              </span>
+            </CardFooter>
+          </Card>
+        </motion.div>
         <Card className="relative overflow-hidden glass-card aspect-2/3">
           <AnimatePresence mode="wait" custom={-direction}>
             <motion.div
@@ -112,31 +118,37 @@ export default function Features() {
             </motion.div>
           </AnimatePresence>
         </Card>
-        <Card className="glass-card text-center h-fit">
-          <CardHeader>
-            <div className="bg-accent w-fit p-4 rounded-full mx-auto text-3xl">
-              👨
-            </div>
-            <CardTitle>Him</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <span className="opacity-70">Mike</span>
-          </CardContent>
-          <CardFooter className="flex items-center justify-center gap-4">
-            <span
-              onClick={() => handleNext(-1)}
-              className="bg-red-500/30 ring hover:bg-red-500/40 ring-red-500/60 p-4 rounded-full cursor-pointer"
-            >
-              <X />
-            </span>
-            <span
-              onClick={() => handleNext(1)}
-              className="bg-green-500/20 hover:bg-green-500/40 ring ring-green-500/60 p-4 rounded-full cursor-pointer"
-            >
-              <Heart />
-            </span>
-          </CardFooter>
-        </Card>
+        <motion.div
+          initial={{ y: 50, opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+          whileInView={{ y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+        >
+          <Card className="glass-card text-center h-fit">
+            <CardHeader>
+              <div className="bg-accent w-fit p-4 rounded-full mx-auto text-3xl">
+                👨
+              </div>
+              <CardTitle>Him</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <span className="opacity-70">Mike</span>
+            </CardContent>
+            <CardFooter className="flex items-center justify-center gap-4">
+              <span
+                onClick={() => handleNext(-1)}
+                className="bg-red-500/30 ring hover:bg-red-500/40 ring-red-500/60 p-4 rounded-full cursor-pointer"
+              >
+                <X />
+              </span>
+              <span
+                onClick={() => handleNext(1)}
+                className="bg-green-500/20 hover:bg-green-500/40 ring ring-green-500/60 p-4 rounded-full cursor-pointer"
+              >
+                <Heart />
+              </span>
+            </CardFooter>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )

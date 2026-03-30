@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -148,21 +149,33 @@ const Hero = () => {
         />
         <ShadowOverlay className="top-0 left-0 -translate-1/2" zIndex="-z-10" />
 
-        <div className="bg-white/10! glass-card rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 justify-between items-center px-5 py-20">
-          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float">
-            <div className="btn-gradient-rose w-18 aspect-square rounded-full" />
-            <span className="font-bold">Her</span>
-            <span className="opacity-60">Swiping...</span>
+        <AnimatePresence>
+          <div className="bg-white/10! glass-card rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 justify-between items-center px-5 py-20">
+            <motion.div
+              initial={{ y: 150, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ y: 0, scale: 1, filter: 'blur(0px)' }}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float"
+            >
+              <div className="btn-gradient-rose w-18 aspect-square rounded-full" />
+              <span className="font-bold">Her</span>
+              <span className="opacity-60">Swiping...</span>
+            </motion.div>
+            <div className="glass-card rounded-full flex items-center justify-center btn-gradient-rose font-semibold py-6 px-12 md:text-2xl">
+              It's a Match! ❤️
+            </div>
+            <motion.div
+              initial={{ y: 150, scale: 0.8, filter: 'blur(10px)' }}
+              whileInView={{ y: 0, scale: 1, filter: 'blur(0px)' }}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float-reverse"
+            >
+              <div className="btn-gradient-sky w-18 aspect-square rounded-full" />
+              <span className="font-bold">Him</span>
+              <span className="opacity-60">Swiping...</span>
+            </motion.div>
           </div>
-          <div className="glass-card rounded-full flex items-center justify-center btn-gradient-rose font-semibold py-6 px-12 md:text-2xl">
-            It's a Match! ❤️
-          </div>
-          <div className="w-full h-[50vh] mx-auto md:aspect-2/3 glass-card rounded-xl flex flex-col justify-center items-center gap-5 animate-float-reverse">
-            <div className="btn-gradient-sky w-18 aspect-square rounded-full" />
-            <span className="font-bold">Him</span>
-            <span className="opacity-60">Swiping...</span>
-          </div>
-        </div>
+        </AnimatePresence>
       </section>
     </>
   )

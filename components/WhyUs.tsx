@@ -1,5 +1,35 @@
+'use client'
+
+import { AnimatePresence, motion } from 'motion/react'
 import { List, Heart, Bell } from 'lucide-react'
 import ShadowOverlay from './ui/shadowOverlay'
+
+const cards = [
+  {
+    icon: <List className="w-8 h-8" />,
+    title: 'Shared Lists',
+    description:
+      'Organize by genre, mood, or platform. Create custom collections for every occasion.',
+    style: 'hover:shadow-brand-rose/20 hover:bg-brand-rose/10',
+    gradient: 'sunset',
+  },
+  {
+    icon: <Heart className="w-8 h-8" />,
+    title: 'Compatibility Score',
+    description:
+      "View a % match based on your shared rating history. Know what you'll both love.",
+    style: 'hover:shadow-[#f472b644] hover:bg-[#f472b6]/10',
+    gradient: 'pink',
+  },
+  {
+    icon: <Bell className="w-8 h-8" />,
+    title: 'Smart Reminders',
+    description:
+      'Get a ping when a highly anticipated series drops. Never miss a must-watch.',
+    style: 'hover:shadow-[#22d3ee44] hover:bg-[#22d3ee]/10',
+    gradient: 'cool',
+  },
+]
 
 export default function WhyUs() {
   return (
@@ -15,38 +45,25 @@ export default function WhyUs() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="glass-card px-4 py-8 rounded-xl hover:scale-105 hover:-translate-y-5 hover:shadow-brand-rose/20 hover:bg-brand-rose/10">
-          <div className="btn-gradient-sunset w-fit p-4 rounded-xl ">
-            <List className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-semibold mt-4 mb-2">Shared Lists</h3>
-          <p className="opacity-70">
-            Organize by genre, mood, or platform. Create custom collections for
-            every occasion.
-          </p>
-        </div>
-        <div className="glass-card px-4 py-8 rounded-xl hover:scale-101 hover:-translate-y-5 hover:shadow-[#f472b644] hover:bg-[#f472b6]/10">
-          <div className="btn-gradient-pink w-fit p-4 rounded-xl ">
-            <Heart className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
-            Compatibility Score
-          </h3>
-          <p className="opacity-70">
-            View a % match based on your shared rating history. Know what you'll
-            both love.
-          </p>
-        </div>
-        <div className="glass-card px-4 py-8 rounded-xl hover:scale-105 hover:-translate-y-5 hover:shadow-[#22d3ee44] hover:bg-[#22d3ee]/10">
-          <div className="btn-gradient-cool w-fit p-4 rounded-xl ">
-            <Bell className="w-8 h-8" />
-          </div>
-          <h3 className="text-xl font-semibold mt-4 mb-2">Smart Reminders</h3>
-          <p className="opacity-70">
-            Get a ping when a highly anticipated series drops. Never miss a
-            must-watch.
-          </p>
-        </div>
+        <AnimatePresence>
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ x: 50, opacity: 0, filter: 'blur(10px)' }}
+              whileInView={{ x: 0, opacity: 1, filter: 'blur(0px)' }}
+              transition={{ delay: 0.2 * (index + 1), duration: 0.3 }}
+              className={`glass-card px-4 py-8 rounded-xl hover:scale-105 hover:-translate-y-5 ${card.style}`}
+            >
+              <div
+                className={`btn-gradient-${card.gradient} w-fit p-4 rounded-xl`}
+              >
+                {card.icon}
+              </div>
+              <h3 className="text-xl font-semibold mt-4 mb-2">{card.title}</h3>
+              <p className="opacity-70">{card.description}</p>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   )
