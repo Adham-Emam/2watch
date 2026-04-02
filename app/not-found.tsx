@@ -8,7 +8,7 @@ export default function NotFound() {
   const router = useRouter()
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center gap-6 max-h-screen overflow-y-hidden">
+    <div className="relative flex min-h-screen items-center justify-center gap-6 max-h-screen overflow-hidden">
       <main className="flex flex-col items-center justify-center gap-6 text-center sm:items-start sm:text-left">
         <ShadowOverlay className="top-1/2 translate-y-1/3 left-0" />
         <ShadowOverlay
