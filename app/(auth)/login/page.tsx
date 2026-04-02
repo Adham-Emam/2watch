@@ -23,7 +23,13 @@ export default function Login() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center py-12 px-5 lg:px-12">
-            <Image src="/logo.png" alt="Logo" width={200} height={100} />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={400}
+              height={100}
+              className="w-80 h-20"
+            />
             <p className="opacity-70">Sign in to your Account</p>
 
             <AuthForm mode="login" />

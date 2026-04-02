@@ -24,7 +24,13 @@ export default function Register() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center py-12 px-5 lg:px-12">
-            <Image src="/logo.png" alt="Logo" width={200} height={100} />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={400}
+              height={100}
+              className="w-80 h-20"
+            />
             <p className="opacity-70">Create your account</p>
 
             <AuthForm mode="register" />
