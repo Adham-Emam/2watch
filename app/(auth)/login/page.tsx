@@ -1,8 +1,19 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ShadowOverlay from '@/components/ui/shadowOverlay'
 import FloatingCards from '../components/FloatingCards'
 import AuthForm from '../components/AuthForm'
+
+export const metadata: Metadata = {
+  title: 'Welcome Back',
+  description:
+    'Log in to 2Watch to see what your partner has added to the list and find your next match.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function Login() {
   return (
@@ -28,7 +39,8 @@ export default function Login() {
               alt="Logo"
               width={400}
               height={100}
-              className="w-80 h-20"
+              loading="eager"
+              className="w-80 h-25"
             />
             <p className="opacity-70">Sign in to your Account</p>
 

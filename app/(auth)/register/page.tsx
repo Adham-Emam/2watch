@@ -4,6 +4,17 @@ import ShadowOverlay from '@/components/ui/shadowOverlay'
 import FloatingCards from '../components/FloatingCards'
 import AuthForm from '../components/AuthForm'
 
+export const metadata = {
+  title: 'Start Your Story',
+  description:
+    'Join 2Watch today. Connect with your partner, sync your favorite platforms, and make every movie night special.',
+  openGraph: {
+    title: 'Join 2Watch | Start Your Story',
+    description:
+      'The first step to better date nights. Create your shared watchlist now.',
+  },
+}
+
 export default function Register() {
   return (
     <main className="relative min-h-screen overflow-hidden">
@@ -29,7 +40,8 @@ export default function Register() {
               alt="Logo"
               width={400}
               height={100}
-              className="w-80 h-20"
+              loading="eager"
+              className="w-80 h-25"
             />
             <p className="opacity-70">Create your account</p>
 
